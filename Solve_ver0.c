@@ -1,17 +1,20 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#define data_len 100
-int new_data[100] = {3,2,-2,-3,2,2,1,-1,-2};
+#define data_len 250
+int new_data[data_len] = {1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,1,2,3,-3,-2,-1,2,-3,3,-2,};
+int base_data[3]={-1,-2,-3};
 
 int main(){
-    uint8_t flag = 1;
-    uint8_t checker = 0;
-    uint8_t len = 0;
-    int data[100] = {0};
-    int set_data[100] = {0};
-
-    for(uint8_t num=0;num<100;num++){
+    int flag = 1;
+    int checker = 0;
+    int len = 0;
+    int data[data_len] = {0};
+    int set_data[data_len] = {0};
+    for(int i=0;i<3;i++){
+        data[i]=base_data[i];
+    }
+    for(uint8_t num=3;num<data_len;num++){
         if(new_data[num]!=0){
             data[checker]=new_data[num];
             checker++;
@@ -53,4 +56,5 @@ int main(){
     for(int j=0;j<checker;j++){
         printf("%d,",data[j]);
     }
+    printf("\n\nsize : %d",checker);
 }
