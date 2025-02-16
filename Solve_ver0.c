@@ -62,6 +62,6 @@ int main(){
     printf("\n\nsize : %d",checker);
     cpu_time = clock();
     sec = (double)cpu_time/CLOCKS_PER_SEC;
-    printf("\n実行時間:%f",sec);
+    printf("\n実行時間:%fs",sec);
 
 }
