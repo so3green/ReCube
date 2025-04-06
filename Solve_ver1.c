@@ -3,17 +3,15 @@
 #include <time.h>
 
 #define data_len 250
-int new_data[data_len] = {-2,1,2,3};
-int base_data[3]={-1,-2,-3};
+int new_data[data_len] = {-1,1,-2,1,1,1,};
+int base_data[3]={1,2,3};
 
-int main(){
+int Solve(){
     int flag = 1;
     int checker = 0;
     int len = 0;
     int data[data_len] = {0};
     int set_data[data_len] = {0};
-    long cpu_time;
-    double sec;
     for(int i=0;i<3;i++){
         data[i]=base_data[i];
     }
@@ -26,7 +24,7 @@ int main(){
     len = checker;
     while(flag){
         flag=0;
-        for (int j = 1; j <10; j++){
+        for (int j = 1; j <data_len; j++){
             if(data[j]!=0){
                 if((data[j]+data[j-1])==0){
                     data[j]=0;
@@ -43,9 +41,7 @@ int main(){
         }
         for(uint8_t num=0;num<len;num++){
             if(data[num]!=0){
-                printf("%d -> %d",data[num],set_data[checker]);
                 set_data[checker]=data[num];
-                printf("||%d == %d\n",data[num],set_data[checker]);
                 checker++;
             }
         }
@@ -60,8 +56,14 @@ int main(){
         printf("%d,",data[j]);
     }
     printf("\n\nsize : %d",checker);
+
+}
+
+int main(){
+    long cpu_time;
+    double sec;
+    Solve();
     cpu_time = clock();
     sec = (double)cpu_time/CLOCKS_PER_SEC;
     printf("\n実行時間:%fs",sec);
-
 }
