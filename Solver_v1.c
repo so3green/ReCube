@@ -4,8 +4,8 @@
 
 //Make data
 int TrySum=1;
-#define SolveSum 40
-int mainData[SolveSum]={-2,2,3,-2,2,-3,3,-2,2,-3,3,-1,1,-3,3,-1,1,-3,-2,2,-2,-1,-2,2,1,-1-3,-1,-2,1};
+#define SolveSum 32
+int mainData[SolveSum]={2,2,-2,2,3,-2,2,-3,3,-2,2,-3,3,-1,1,-3,3,-1,1,-3,-2,2,-2,-1,-2,2,1,-1,-3,-1,-2,1};
 int AnswerSum=0;
 
 //Time
